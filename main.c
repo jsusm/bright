@@ -1,3 +1,4 @@
+#include <fcntl.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -89,6 +90,19 @@ int set_brightness(int brightness) {
 
   if (pid == 0) {
     char brightness_arg[6];
+
+    int dev_null_fd = open("/dev/null", O_WRONLY);
+    if (dev_null_fd == -1) {
+      perror("open /dev/null failed");
+      _exit(1);
+    }
+    if (dup2(dev_null_fd, STDOUT_FILENO) == -1) {
+      perror("dup2 failed");
+      close(dev_null_fd);
+      _exit(1);
+    }
+    close(dev_null_fd);
+
     sprintf(brightness_arg, "%d", brightness);
     execlp("brightnessctl", "brightnessctl", "s", brightness_arg, NULL);
     printf("Error: The command doesn't execute properly\n");

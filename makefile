@@ -1,7 +1,7 @@
-screlex:
+bright:
 	gcc main.c -o bright
 
-install: screli
+install: bright
 	cp bright ${HOME}/.local/bin
 
 
