@@ -2,7 +2,11 @@ screlex:
 	gcc main.c -o bright
 
 install: screli
-	cp screli ${HOME}/.local/bin
+	cp bright ${HOME}/.local/bin
+
+
+uninstall:
+	rm ${HOME}/.local/bin/bright
 
 clean:
 	rm ./bright
