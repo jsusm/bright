@@ -1,31 +1,35 @@
 # Bright
-CLI utility written in pure c for increasing and decreasin the screen brightness
-in logarithmic scale using brightnessctl command
+A CLI utility written in pure C for increasing and decreasing screen brightness on a logarithmic scale, using the `brightnessctl` command.
 
 ## Requirements
-This program uses brightnessctl comamand if you dont have it
-installed or it doesn't work with your hardware this program
-will not work in your machine.
+
+This program uses the `brightnessctl` command. If you don't have it installed, or if it doesn't work with your hardware, this program will not work on your machine.
 
 ## Usage
+
 ```bash
-bright i # increase brightness
+# Increase brightness
+bright i
 
-bright d # increase decrease
+# Decrease brightness
+bright d
 
-bright # display current brightness
+# Display current brightness
+bright
 ```
 
 ## Installing
-Clone the repo and install with make
+
+To install, clone the repository and use `make`.
 
 ```bash
 git clone https://github.com/jsusm/bright bright
 cd bright
-make install
+sudo make install
 ```
 
-## Uninstall
+## Uninstalling
+
 ```bash
-make uninstall
+sudo make uninstall
 ```
