@@ -1,6 +1,8 @@
 # Bright
 A CLI utility written in pure C for increasing and decreasing screen brightness on a logarithmic scale, using the `brightnessctl` command.
 
+This is particularly useful for creating keybindings in window managers.
+
 ## Requirements
 
 This program uses the `brightnessctl` command. If you don't have it installed, or if it doesn't work with your hardware, this program will not work on your machine.
